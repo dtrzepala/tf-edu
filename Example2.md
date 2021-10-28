@@ -22,4 +22,9 @@
    1. run `terraform apply`. See that even though it's all in separate files, sometimes referencing each other from different files.
    2. see merge command
    3. reuse of already set parameters (tags, merge - collection func)
-3. 
+3. Make use of variables
+   1. let's define separate file for defining variables - `variables.tf` - although they can be added in any file as well.
+   2. run apply with extra file providing the variable value<br>
+   `terraform apply -var-file="vars/test.tfvars" `
+   3. see analysed plan.
+   4. as you can see this is convenient way for reusing infrastructure configuration in multi-tenant systems or through different stages 

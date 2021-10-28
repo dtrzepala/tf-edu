@@ -1,9 +1,6 @@
 resource "azurerm_resource_group" "rg-application" {
   name     = "rg-example1-test-001"
-  location = "west europe"
+  location = var.location
 
-  tags = {
-    Terraform   = "true"
-    Environment = "test"
-  }
+  tags = var.tags
 }
