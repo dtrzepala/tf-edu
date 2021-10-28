@@ -27,4 +27,9 @@
    2. run apply with extra file providing the variable value<br>
    `terraform apply -var-file="vars/test.tfvars" `
    3. see analysed plan.
-   4. as you can see this is convenient way for reusing infrastructure configuration in multi-tenant systems or through different stages 
+   4. as you can see this is a convenient way for reusing infrastructure configuration in multi-tenant systems or through different stages
+4. loop through array and dynamically create blocs with for_each
+   1. many use cases - we will block access with ip restriction block. See `appservices.tf`
+   2. run `terraform apply`. See the plan
+5. Remember to run `terraform destroy`
+    

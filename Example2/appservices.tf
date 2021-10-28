@@ -25,6 +25,13 @@ resource "azurerm_app_service" "appfrontend" {
     always_on     = false
     http2_enabled = true
     //    app_command_line = "pm2 serve /home/site/wwwroot --no-daemon --spa"   
+
+    dynamic "ip_restriction" {
+      for_each = var.ip_rules
+      content {
+        ip_address  = "${ip_restriction.value}/32"
+      }
+    }
   }
   app_settings = {
     "WEBSITE_VNET_ROUTE_ALL" : "1"
