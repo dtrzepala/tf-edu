@@ -18,3 +18,8 @@
    2. create azure storage account `stterraformfisexamples{yourname}`(must be globally unique) with blob container e.g. `states`
    3. modify `storage_account_name` to match your storage account name
    4. run `terraform init`. The state file with the key specified in the backend.tf file should be created.
+2. Add resources resource groups, storage, app service (see next commit).
+   1. run `terraform apply`. See that even though it's all in separate files, sometimes referencing each other from different files.
+   2. see merge command
+   3. reuse of already set parameters (tags, merge - collection func)
+3. 
